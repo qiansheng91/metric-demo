@@ -49,7 +49,7 @@ public class OTELMetricsClient implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() {
-        String endpoint = System.getenv("ENDPOINT");
+        String endpoint = System.getenv("OTEL_EXPORTER_OTLP_ENDPOINT");
         Resource RESOURCE =
                 Resource.create(Attributes.of(stringKey("podId"), System.getenv("MY_POD_IP")));
 
